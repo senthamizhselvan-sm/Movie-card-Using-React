@@ -1,5 +1,8 @@
-const API_KEY = import.meta.env.VITE_API_KEY;
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+const API_KEY = "429581e316d97dce8d9f52fb532dd50a";
+const BASE_URL = "https://api.themoviedb.org/3";
+
+
+
 
 
 
