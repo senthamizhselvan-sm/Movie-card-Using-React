@@ -1,6 +1,6 @@
 import "./css/App.css";
-import Favorites from "../pages/Favorites";
-import Home from "../pages/Home";
+import Favorites from "./Pages/Favorites";
+import Home from "./Pages/Home";
 import { Routes, Route } from "react-router-dom";
 import { MovieProvider } from "./contexts/MovieContext";
 import NavBar from "./components/NavBar";
