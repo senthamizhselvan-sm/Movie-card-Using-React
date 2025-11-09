@@ -1,0 +1,132 @@
+/* Base styling */
+.movie-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #1c1c1c, #2c2c2c);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #f0f0f0;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.movie-poster {
+  position: relative;
+  aspect-ratio: 2/3;
+  width: 100%;
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 2px solid #333;
+}
+
+/* Overlay appears on hover */
+.movie-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.movie-card:hover .movie-overlay {
+  opacity: 1;
+}
+
+/* Favorite (heart) button */
+.favorite-btn {
+  color: white;
+  font-size: 1.4rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.favorite-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.favorite-btn.active {
+  color: #ff4d6d;
+  background: rgba(255, 77, 109, 0.2);
+  border-color: rgba(255, 77, 109, 0.4);
+}
+
+/* Movie information below image */
+.movie-info {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.movie-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.movie-info p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Optional rating styles */
+.user-rating {
+  color: #ffd700;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* Dropdown rating (if used) */
+.rating-select {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .movie-card {
+    font-size: 0.9rem;
+  }
+
+  .movie-info {
+    padding: 0.75rem;
+  }
+
+  .favorite-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+}

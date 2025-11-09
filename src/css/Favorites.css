@@ -1,0 +1,86 @@
+.favorites {
+  padding: 3rem 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  color: #ffffff;
+  background: linear-gradient(to bottom right, #1a1a1a, #0d0d0d);
+  min-height: 100vh;
+}
+
+.favorites h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+  letter-spacing: 1px;
+}
+
+/* Grid layout for favorite movies */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  padding-top: 1rem;
+  animation: fadeIn 0.4s ease-in;
+}
+
+/* Animation for new favorites */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.movies-grid > * {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Empty state styling */
+.favorites-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  margin: 4rem auto;
+  max-width: 600px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.favorites-empty h2 {
+  font-size: 2rem;
+  color: #ff4757;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.favorites-empty p {
+  color: #bbbbbb;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .favorites {
+    padding: 2rem 1rem;
+  }
+
+  .favorites h2 {
+    font-size: 2rem;
+  }
+
+  .movies-grid {
+    gap: 1.5rem;
+  }
+}
